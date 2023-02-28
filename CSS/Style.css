@@ -1,0 +1,352 @@
+@import url('https://fonts.googleapis.com/css2?family=Tenali+Ramakrishna&display=swap');
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root
+{
+    --color-primary     : #524E4E;
+    --text              : #FFFFFF;
+    --background-footer : #E4E4E4;
+    --background-title  : #A6A6A6;
+    --background-body   : #D2D2D2;
+    --background-header : #D9D9D9;
+}
+html
+{
+    font-size: 62.5%;
+}
+body
+{
+    font-family: 'Tenali Ramakrishna', sans-serif;
+}
+/*/TAMAÑO DEL CONTENEDOR/*/
+.container-background
+{
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: 8fr 9fr;
+    grid-template-rows: 2fr 6fr 1fr 1fr 2fr;
+}
+/*/ESTILO DEL FONDO /*/
+.background-header
+{
+    width: 113%;
+    height: 40%;
+    transform: rotate(-14deg);
+    position: absolute;
+    top: -29%;
+    right: -1%;
+    background-color: var(--background-header);
+    z-index: 4;
+    background: #e0e0e0;
+    box-shadow:  14px 14px 28px #686868,
+                -14px -14px 28px #ffffff;
+}
+.background-body
+{
+    width: 163%;
+    height: 165%;
+    transform: rotate(-72deg);
+    top: -50%;
+    position: absolute;
+    background-color: var(--background-body);
+    z-index: 3;
+    box-shadow:-14px 14px 28px #656565,
+                14px -14px 28px #ffffff;
+}
+.background-footer-left
+{
+    width: 80%;
+    height: 50%;
+    transform: rotate(-36deg);
+    position: absolute;
+    background-color: var(--background-title);
+    z-index: 2;
+    top: 35%;
+    left: -40%;
+    box-shadow:  14px 14px 28px #505050,
+                -14px -14px 28px #fcfcfc;
+}
+.background-footer-right
+{
+    width: 106%;
+    height: 90%;
+    position: absolute;
+    z-index: 1;
+    background-color: var(--background-footer);
+    bottom: 0;
+}
+/*/DISPOSICION DE LA BARRA DEL MENU Y SUS ELEMENTOS /*/
+.container-header
+{
+    z-index: 5;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: auto;
+    padding: 15px 3px 15px 27px;
+}
+/*/CONTENEDOR DEL NAV/*/
+.container-header-menu .contain
+{
+    width: 80%;
+    height: 10px;
+    border-radius: 5px;
+    background-color: var(--text);
+    display: inline-block;
+}
+/*/ELEMENTOS INTERNOS DEL MENU/*/
+.container-header-menu
+{
+    width: 52px; 
+    height: 65px;
+    border-radius: 11px;
+    background-color: var(--color-primary);   
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 5px;
+
+}
+/*/TAMAÑO DEL TEXTO /*/
+.container-header-text
+{
+    font-size: 3.2rem;
+    line-height: 24px;
+    color: var(--color-primary);
+    margin-left: 10px;
+}
+/*/////////////CONTENEDOR DE LA PLAY LIST//////*/
+.container-body
+{
+    z-index: 5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    grid-column: 1 / 2;
+    grid-row: 2 / 3;
+    padding: 30px 3px 60px 27px;
+}
+.container-body .container-button-body
+{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    background-color: var(--color-primary);
+    border-radius: 13px;
+    justify-content: start;
+    padding: 10px;
+    align-items: center;
+}
+.container-body p
+{
+    display: inline-block;
+    font-size: 1.6rem;
+    color: var(--text);
+    position: absolute;
+    line-height: 12px;
+    position: relative;
+    top: 3px;
+}
+
+
+/*/TITULO DEL ARTISTA/*/
+.container-artist
+{
+    z-index: 8;
+    grid-column: 1 / 2;
+    grid-row: 3 / 4;
+    position: relative;
+}
+.container-artist h1
+{
+    font-size: 5rem;
+    font-weight: 500;
+    color: var(--color-primary);
+    position: absolute;
+    margin-left: 27px;
+    top: 20%;
+}
+/*/Barra del tiempo/*/
+.container-footer-time
+{
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+    grid-column: 1 / 3;
+    grid-row: 4 / 5;
+    align-items: center;
+    justify-content: end;
+}
+.container-footer-time .container-start
+{
+    display: flex;
+    width: 320px;
+    justify-content: space-between;
+}
+.container-footer-time .container-start p
+{
+    font-size: 2rem;
+    color: var(--color-primary);
+}
+.container-footer-bar
+{
+    width: calc(100% - 54px);
+    height: 18px;
+    border-radius: 7px;
+    background-color: var(--color-primary);
+    display: flex;
+    align-items: center;
+}
+.container-footer-bar--complete
+{
+    width: 128px;
+    height: 10px;
+    border-radius: 7px;
+    background-color: var(--text); 
+    margin-left: 4px;
+}
+/*/Imagen/*/
+.container-nav
+{
+    grid-column: 2 / 3;
+    grid-row: 1 / 3;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    overflow-x: scroll;
+    vertical-align: middle;
+    overscroll-behavior-x: contain;
+    scroll-snap-type: x mandatory;
+    scroll-snap-align: center;
+    margin: 0 0 0 27px;
+    border-bottom-left-radius: 67px;
+}
+.container-nav-section
+{
+    scroll-snap-align: start;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+}
+.container-img img
+{
+    width: 200px;
+    height: 650px;
+    border-bottom-left-radius: 67px;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;    
+
+}
+.container-background-nav
+{
+    width: 120%;
+    height: 100%;
+    background-color: black;
+    z-index: 4;
+    opacity: 50%;
+    position: absolute;    
+}
+
+.container-nav p
+{
+    font-size: 2.8rem;
+    line-height: 24px;
+    font-weight: 500;
+    width: 100%;
+    justify-content: center;
+    color: var(--text);
+    text-align: center;
+    position: absolute;
+    margin-left: 10px;
+    bottom: 10px;
+    z-index: 5;
+}
+.buttons
+{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    position: absolute;
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    top: 10px;
+    margin-left: 20px;
+    align-content: start;
+    justify-content: center;
+}
+.container-nav-button
+{
+    width: 15px;
+    height: 15px;
+    background-color: var(--color-primary);
+    border-radius: 50%;
+    margin-left: 10px;
+} 
+/*/PAUSAR RETROCEDER AVANZAR/*/
+footer
+{
+    z-index: 10;
+    grid-column: 1 / 3;
+    grid-row: 5 / 6;
+    display: flex;
+    justify-content: center;
+}
+.container-footer{
+    width: calc(100% - 57px);
+    height: 100%;
+    z-index: 10;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.container-footer-button
+{
+    background-color: var(--color-primary);
+    border-radius: 25px;
+    box-shadow:  10px 10px 15px #211f1f,
+                -5px -5px 10px #ffffff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.aleatory
+{
+    width: 30px;
+    height: 50px;
+}
+.back
+{
+    width: 50px;
+    height: 72px;
+}
+.pause
+{
+    width: 80px;
+    height: 90px;
+}
+.advance
+{
+    width: 50px;
+    height: 72px;
+}
+.loop
+{
+    width: 30px;
+    height: 50px;
+}
+/*/elementos internos/*/
